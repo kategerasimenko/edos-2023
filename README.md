@@ -33,34 +33,34 @@ In order to reproduce our results, you should collect the data and place it acco
 ```
 edos_data
 └───raw
-    │   train_all_tasks.csv
     │   dev_task_a_entries.csv
     │   dev_task_b_entries.csv
     │   dev_task_c_entries.csv
+    │   gab_1M_unlabelled.csv
+    │   reddit_1M_unlabelled.csv
     │   test_task_a_entries.csv
     │   test_task_b_entries.csv
     │   test_task_c_entries.csv
-    │   reddit_1M_unlabelled.csv
-    │   gab_1M_unlabelled.csv
+    │   train_all_tasks.csv
 
 multitask_data
 └───raw
     │
     └───hate_speech
-    │   └───OLIDv1.0
     │   └───HaSpeeDe_2018
     │   └───HaSpeeDe_2020
-    │   └───Jigsaw_unintended_bias_civil_comments
     │   └───hateval2019
+    │   └───Jigsaw_unintended_bias_civil_comments
     │   └───measuring_hate_speech
+    │   └───OLIDv1.0
     │
     └───misogyny
-        └───Guest_et_al_online_misogyny
-        └───call_me_sexist
-        └───EXIST2021
         └───AMI_EVALITA
             └───AMI2018_ELG
             └───AMI2020
+        └───call_me_sexist
+        └───EXIST2021
+        └───Guest_et_al_online_misogyny
 ```
 
 Afterwards you need to run the following notebooks and scripts in the `data_preprocessing/` folder to preprocess the data:
