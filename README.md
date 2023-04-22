@@ -76,7 +76,7 @@ and set up the API token and a project name, where the experiment results will b
 
 To run TAPT on EDOS, DAPT on 2M, and DAPT on 2M+HS accordingly:
 ```shell
-python training/dont_stop_pretraining/train.py --base-model="roberta-large" --task-name=edos --batch-size=32 --max-epochs=10 --eval-steps=298
+python training/dont_stop_pretraining/train.py --base-model="roberta-large" --task-name=edos --batch-size=32 --max-epochs=10 --eval-steps=298  --preprocessing-mode=basic
 python training/dont_stop_pretraining/train.py --base-model="roberta-large" --task-name=2M --batch-size=24 --max-epochs=5 --eval-steps=10000 --preprocessing-mode=basic
 python training/dont_stop_pretraining/train.py --base-model="roberta-large" --task-name=2M_hate --batch-size=24 --max-epochs=5 --eval-steps=10000 --preprocessing-mode=basic
 ```
@@ -106,14 +106,14 @@ Use `python training/finetuning/train.py --help` or check the file to see other 
 
 Example of fine-tuning a DAPT model:
 ```shell
-BASE_MODEL=models/dont_stop_pretraining-roberta-large-2M-basic_preproc
+BASE_MODEL=models/dont_stop_pretraining/dont_stop_pretraining-roberta-large-2M-basic_preproc
 python training/finetuning/train.py --base-model=$BASE_MODEL --edos-task=A --config-name="updated-large"
 ```
 
 
 ### Multi-task learning
 
-We have customized [MaChAmp](https://github.com/machamp-nlp/machamp) code to include integration with Neptune to keep track of experiments. 
+We have customized [MaChAmp](https://github.com/machamp-nlp/machamp) code (version: commit 086dcbc) to include integration with Neptune to keep track of experiments. 
 The customized code is located in `machamp_repo` folder.
 
 Example of one MTL experiment:
@@ -144,7 +144,7 @@ The list of the datasets is available in `training/machamp/datasets.json`. The d
 
 Example of a preprocessing experiment:
 ```shell
-sbatch training/preprocessing_test/train.py --base-model="roberta-base" --preprocess-masks --preprocess-hashtags --preprocess-emoji --preprocess-spaces
+python training/preprocessing_test/train.py --base-model="roberta-base" --preprocess-masks --preprocess-hashtags --preprocess-emoji --preprocess-spaces
 ```
 
 Main parameters:
