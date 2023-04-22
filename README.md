@@ -33,15 +33,9 @@ In order to reproduce our results, you should collect the data and place it acco
 ```
 edos_data
 └───raw
-    │   dev_task_a_entries.csv
-    │   dev_task_b_entries.csv
-    │   dev_task_c_entries.csv
+    │   edos_labelled_aggregated.csv
     │   gab_1M_unlabelled.csv
     │   reddit_1M_unlabelled.csv
-    │   test_task_a_entries.csv
-    │   test_task_b_entries.csv
-    │   test_task_c_entries.csv
-    │   train_all_tasks.csv
 
 multitask_data
 └───raw
